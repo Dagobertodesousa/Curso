@@ -1,51 +1,49 @@
 package Modelo;
 
-import java.util.Set;
+public class Discente {
+    private String nomeDiscente;
+    private int idDiscente;
+    private int idCurso;
+    private int contato;
+    private int cargaHorariaConcluida;
 
-public abstract class Discente {
-    private String nome;
-    private String endereco;
-    private int telefone;
-    private Set<Disciplina> disciplinas;
-    private boolean matricula;
-    
-    public Discente(String nome) {
-        this.nome = nome;
+    public Discente(String nomeDiscente, int idDiscente, int contato) {
+        this.nomeDiscente = nomeDiscente;
+        this.idDiscente = idDiscente;
+        this.idCurso = 0;
+        this.contato = contato;
+        this.cargaHorariaConcluida = 0;
     }
 
-    public String getNome() {
-        return nome;
+    public Discente(String nomeDiscente, int idDiscente, int contato, int cargaHorariaConcluida) {
+        this.nomeDiscente = nomeDiscente;
+        this.idDiscente = idDiscente;
+        this.idCurso = 0;
+        this.contato = contato;
+        this.cargaHorariaConcluida = cargaHorariaConcluida;
     }
 
-    public String getEndereco() {
-        return endereco;
+    public String getNomeDiscente() {
+        return nomeDiscente;
     }
 
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
+    public int getIdDiscente() {
+        return idDiscente;
     }
 
-    public int getTelefone() {
-        return telefone;
+    public int getIdCurso() {
+        return idCurso;
     }
 
-    public void setTelefone(int telefone) {
-        this.telefone = telefone;
+    public int getContato() {
+        return contato;
     }
 
-    public Set<Disciplina> getDisciplinas() {
-        return disciplinas;
+    public int getCargaHorariaConcluida() {
+        return cargaHorariaConcluida;
     }
 
-    public void setDisciplinas(Set<Disciplina> disciplinas) {
-        this.disciplinas = disciplinas;
-    }
-
-    public boolean isMatricula() {
-        return matricula;
-    }
-
-    public void setMatricula(boolean matricula) {
-        this.matricula = matricula;
+    public void setCargaHorariaConcluida(int cargaHorariaConcluida) {
+        this.cargaHorariaConcluida = cargaHorariaConcluida;
     }
 }

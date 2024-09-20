@@ -1,51 +1,46 @@
 package Modelo;
 
-import java.util.Set;
+public class Docente {
+    private int idDocente;
+    private String nomeDocente;
+    private int contatoDocente;
+    private int idArea;
+    private String especialidade;
 
-public abstract class Docente {
-    private String docente;
-    private String endereco;
-    private int telefone;
-    private String area;
-    private Set<Disciplina> disciplinas;
-    
-    public Docente(String docente) {
-        this.docente = docente;
+    public Docente(int idDocente, String nomeDocente) {
+        this.idDocente = idDocente;
+        this.nomeDocente = nomeDocente;
     }
 
-    public String getDocente() {
-        return docente;
+    public int getIdDocente() {
+        return idDocente;
     }
 
-    public String getEndereco() {
-        return endereco;
+    public String getNomeDocente() {
+        return nomeDocente;
     }
 
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
+    public int getContatoDocente() {
+        return contatoDocente;
     }
 
-    public int getTelefone() {
-        return telefone;
+    public void setContatoDocente(int contatoDocente) {
+        this.contatoDocente = contatoDocente;
     }
 
-    public void setTelefone(int telefone) {
-        this.telefone = telefone;
+    public int getIdArea() {
+        return idArea;
     }
 
-    public String getArea() {
-        return area;
+    public void setIdArea(int idArea) {
+        this.idArea = idArea;
     }
 
-    public void setArea(String area) {
-        this.area = area;
+    public String getEspecialidade() {
+        return especialidade;
     }
 
-    public Set<Disciplina> getDisciplinas() {
-        return disciplinas;
-    }
-
-    public void setDisciplinas(Set<Disciplina> disciplinas) {
-        this.disciplinas = disciplinas;
+    public void setEspecialidade(String especialidade) {
+        this.especialidade = especialidade;
     }
 }

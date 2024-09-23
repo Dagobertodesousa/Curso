@@ -1,5 +1,7 @@
 import java.util.LinkedHashSet;
+import java.util.Random;
 import java.util.Set;
+import java.util.stream.IntStream;
 
 import Modelo.*;
 
@@ -112,11 +114,25 @@ public class Main {
         curso.add(quintoModulo);
         curso.add(sextoModulo);
 
-        Curso c = new Curso(null, 0, curso.stream().reduce(0, (n1,n2) -> n1.getIdentificadorAreaDisciplina().), curso.size());
+        Curso c = new Curso("Algum curso ae"
+            , 0
+            , curso.stream()
+                .mapToInt(n -> n.getCargaHoraria())
+                .sum()
+            , curso.size());
 
-        System.out.println(primeiroModulo.getIdentificadorAreaDisciplina().values());
+        System.out.println("curso "+ c.getNomeCurso() + " carga: " + c.getCargaHorariaTotal() + " in hours");
 
-        
-        System.out.println(terceiroModulo.getIdentificadorAreaDisciplina().values());
+        Set<Discente> discentes = new LinkedHashSet<>();
+        discentes.add(new Discente("Julio Moreira Melo", (new Random().nextInt(10000000, 999999999))));
+        discentes.add(new Discente("Mauricio Coutinho", (new Random().nextInt(10000000, 999999999))));
+        discentes.add(new Discente("Julio Moreira Melo", (new Random().nextInt(10000000, 999999999))));
+        discentes.add(new Discente("Julio Moreira Melo", (new Random().nextInt(10000000, 999999999))));
+        discentes.add(new Discente("Julio Moreira Melo", (new Random().nextInt(10000000, 999999999))));
+        discentes.add(new Discente("Julio Moreira Melo", (new Random().nextInt(10000000, 999999999))));
+        discentes.add(new Discente("Julio Moreira Melo", (new Random().nextInt(10000000, 999999999))));
+
+
+        System.out.println(new Random().nextInt(1,999999999));
     }
 }

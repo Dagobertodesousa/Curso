@@ -8,6 +8,7 @@ public class Area {
     protected String areaGeral;
     protected Integer codigoArea;
     protected int modulos;
+    protected int cargaHoraria;
     protected Map<Integer, Set<Disciplina>> identificadorAreaDisciplina = new HashMap<Integer, Set<Disciplina>>();
     protected Docente competenciaDocente;
 
@@ -16,6 +17,7 @@ public class Area {
         this.codigoArea = codigoArea;
         this.identificadorAreaDisciplina.put(codigoArea, disciplinas);
         this.modulos = modulos;
+        this.cargaHoraria = disciplinas.stream().mapToInt(n -> n.getCargaHoraria()).sum();
     }
     public Area(String areaGeral) {
         this.areaGeral = areaGeral;
@@ -37,5 +39,8 @@ public class Area {
     }
     public Docente getCompetenciaDocente() {
         return competenciaDocente;
+    }
+    public int getCargaHoraria(){
+        return cargaHoraria;
     }
 }
